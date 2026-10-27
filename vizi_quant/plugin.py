@@ -46,7 +46,7 @@ from vizi_quant import derived, export, perf, plot, stats
 from vizi_quant.cache import Cache, identity_of
 from vizi_quant.engine import Engine
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 PANEL = "quant"
 TABLE = "regions"
 RENDER_EVERY_S = 0.5

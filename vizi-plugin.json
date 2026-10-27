@@ -2,7 +2,7 @@
   "manifest_version": 1,
   "id": "org.focolab.vizi_quant",
   "name": "vizi-quant",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vizi": "1.0"
   },
