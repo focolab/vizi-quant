@@ -1,0 +1,312 @@
+{
+  "manifest_version": 1,
+  "id": "org.focolab.vizi_quant",
+  "name": "vizi-quant",
+  "version": "0.1.0",
+  "engines": {
+    "vizi": "1.0"
+  },
+  "min_vizi": "1.0.0",
+  "sdk_version": "1.0.0",
+  "entry": {
+    "command": [
+      ".venv/bin/python",
+      "vizi_quant_plugin.py"
+    ]
+  },
+  "contributions": {
+    "commands": [
+      {
+        "id": "quant.run",
+        "title": "Measure every region on every frame",
+        "menu": null
+      },
+      {
+        "id": "quant.stop",
+        "title": "Stop measuring",
+        "menu": null
+      },
+      {
+        "id": "quant.plot_stat",
+        "title": "Statistic to plot",
+        "menu": null
+      },
+      {
+        "id": "quant.plot_channel",
+        "title": "Channel to plot",
+        "menu": null
+      },
+      {
+        "id": "quant.plot_mode",
+        "title": "Plot raw F or ΔF/F",
+        "menu": null
+      },
+      {
+        "id": "quant.baseline",
+        "title": "ΔF/F baseline",
+        "menu": null
+      },
+      {
+        "id": "quant.window",
+        "title": "Baseline window (frames)",
+        "menu": null
+      },
+      {
+        "id": "quant.percentile",
+        "title": "Baseline percentile",
+        "menu": null
+      },
+      {
+        "id": "quant.range",
+        "title": "Baseline frame range",
+        "menu": null
+      },
+      {
+        "id": "quant.pick",
+        "title": "Select regions",
+        "menu": null
+      },
+      {
+        "id": "quant.plot_click",
+        "title": "Go to a frame on the plot",
+        "menu": null
+      },
+      {
+        "id": "quant.export_wide",
+        "title": "Export the wide table",
+        "menu": null
+      },
+      {
+        "id": "quant.export_long",
+        "title": "Export the long table",
+        "menu": null
+      }
+    ],
+    "panels": [
+      {
+        "id": "quant",
+        "title": "Quantify",
+        "menu_label": "Quantify",
+        "root": {
+          "kind": "column",
+          "id": "root",
+          "children": [
+            {
+              "kind": "row",
+              "id": "run_row",
+              "children": [
+                {
+                  "kind": "button",
+                  "id": "run",
+                  "text": "Measure",
+                  "command": "quant.run"
+                },
+                {
+                  "kind": "button",
+                  "id": "stop",
+                  "text": "Stop",
+                  "command": "quant.stop"
+                },
+                {
+                  "kind": "label",
+                  "id": "progress",
+                  "text": ""
+                }
+              ]
+            },
+            {
+              "kind": "row",
+              "id": "show_row",
+              "children": [
+                {
+                  "kind": "label",
+                  "id": "show_label",
+                  "text": "Show"
+                },
+                {
+                  "kind": "dropdown",
+                  "id": "plot_stat",
+                  "command": "quant.plot_stat",
+                  "options": [
+                    "mean",
+                    "bright (85–95th percentile)",
+                    "dim (5–15th percentile)",
+                    "spread (std)"
+                  ],
+                  "value": "mean"
+                },
+                {
+                  "kind": "dropdown",
+                  "id": "plot_channel",
+                  "command": "quant.plot_channel",
+                  "options": [
+                    "ch1"
+                  ],
+                  "value": "ch1"
+                },
+                {
+                  "kind": "dropdown",
+                  "id": "plot_mode",
+                  "command": "quant.plot_mode",
+                  "options": [
+                    "raw brightness (F)",
+                    "ΔF/F"
+                  ],
+                  "value": "raw brightness (F)"
+                }
+              ]
+            },
+            {
+              "kind": "table",
+              "id": "regions",
+              "columns": [
+                {
+                  "id": "name",
+                  "header": "Region"
+                },
+                {
+                  "id": "f",
+                  "header": "F",
+                  "type": "number",
+                  "precision": 1
+                },
+                {
+                  "id": "dff",
+                  "header": "ΔF/F",
+                  "type": "number",
+                  "precision": 3
+                }
+              ],
+              "command": "quant.pick",
+              "selectable": true,
+              "multiple": true,
+              "visible_rows": 4,
+              "sortable": true,
+              "moves_view": true
+            },
+            {
+              "kind": "image",
+              "id": "plot",
+              "command": "quant.plot_click",
+              "moves_view": true
+            },
+            {
+              "kind": "row",
+              "id": "baseline_row",
+              "children": [
+                {
+                  "kind": "label",
+                  "id": "baseline_label",
+                  "text": "ΔF/F baseline (F0)"
+                },
+                {
+                  "kind": "dropdown",
+                  "id": "baseline",
+                  "command": "quant.baseline",
+                  "options": [
+                    "moving (follows drift)",
+                    "fixed frames"
+                  ],
+                  "value": "moving (follows drift)"
+                }
+              ]
+            },
+            {
+              "kind": "row",
+              "id": "moving_row",
+              "children": [
+                {
+                  "kind": "label",
+                  "id": "moving_a",
+                  "text": "F0: percentile"
+                },
+                {
+                  "kind": "line_edit",
+                  "id": "percentile",
+                  "command": "quant.percentile",
+                  "placeholder": "10",
+                  "value": "10"
+                },
+                {
+                  "kind": "label",
+                  "id": "moving_b",
+                  "text": "of the nearest"
+                },
+                {
+                  "kind": "line_edit",
+                  "id": "window",
+                  "command": "quant.window",
+                  "placeholder": "101",
+                  "value": "101"
+                },
+                {
+                  "kind": "label",
+                  "id": "moving_c",
+                  "text": "frames"
+                }
+              ]
+            },
+            {
+              "kind": "row",
+              "id": "fixed_row",
+              "children": [
+                {
+                  "kind": "label",
+                  "id": "fixed_a",
+                  "text": "F0: mean of frames"
+                },
+                {
+                  "kind": "line_edit",
+                  "id": "range",
+                  "command": "quant.range",
+                  "placeholder": "1-10",
+                  "value": "1-10"
+                },
+                {
+                  "kind": "label",
+                  "id": "fixed_b",
+                  "text": "(first-last, as T shows them)"
+                }
+              ]
+            },
+            {
+              "kind": "row",
+              "id": "export_row",
+              "children": [
+                {
+                  "kind": "button",
+                  "id": "export_wide",
+                  "text": "Export table…",
+                  "command": "quant.export_wide"
+                },
+                {
+                  "kind": "button",
+                  "id": "export_long",
+                  "text": "Export tidy table…",
+                  "command": "quant.export_long"
+                }
+              ]
+            },
+            {
+              "kind": "label",
+              "id": "status",
+              "text": "Open a dataset to measure its regions"
+            }
+          ]
+        },
+        "view_targets": [
+          "t",
+          "select_region",
+          "frame_region"
+        ]
+      }
+    ]
+  },
+  "permissions": [
+    "data_access"
+  ],
+  "subscriptions": [
+    "view",
+    "regions"
+  ]
+}

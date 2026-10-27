@@ -1,0 +1,46 @@
+{
+ "Box 1": {
+  "origin_zyx": [
+   8,
+   32,
+   32
+  ],
+  "region_id": "b677f0bc734a4e8588ec7b3bf90aeafa",
+  "content_hash": "ea4c08bb54dc5e05",
+  "n": 8192,
+  "voxel_count": 8192
+ },
+ "Box 2": {
+  "origin_zyx": [
+   8,
+   46,
+   27
+  ],
+  "region_id": "9a2bfae4b7fb4bd78322ce79af7bc7d6",
+  "content_hash": "40b7ffe62c8b1320",
+  "n": 1770,
+  "voxel_count": 1770
+ },
+ "Box 3": {
+  "origin_zyx": [
+   0,
+   0,
+   0
+  ],
+  "region_id": "a77d9590d6b948ce867c0458e6e3537f",
+  "content_hash": "b6e5cc2aeed15e60",
+  "n": 207575,
+  "voxel_count": 207575
+ },
+ "Box 4": {
+  "origin_zyx": [
+   2,
+   64,
+   10
+  ],
+  "region_id": "f81bc8d8bee64a9b9835cfb3a7564761",
+  "content_hash": "7e309b660021856d",
+  "n": 4557,
+  "voxel_count": 4557
+ }
+}

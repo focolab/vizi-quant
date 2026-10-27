@@ -1,0 +1,8 @@
+# What the plugin imports, resolved from PyPI.  The SDK's wheel is vendor/,
+# and tools/lock.py appends it to each lock with its hash; the SDK's own
+# dependencies are listed here so the lock pins them:
+atomicshm>=0.1,<0.2
+grpcio>=1.60.1
+protobuf>=4.25,<7
+numpy>=1.26
+matplotlib>=3.8

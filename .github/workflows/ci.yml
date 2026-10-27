@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        # one job per lock target; the exact patch each lock was generated on
+        python: ["3.11.13", "3.13.5"]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: bootstrap from the lock
+        run: python scripts/bootstrap.py  # bare, as vizi runs it
+      - name: doctor
+        run: .venv/bin/python scripts/doctor.py
+      - name: locks are current
+        run: |
+          python -m venv /tmp/lock && /tmp/lock/bin/python -m pip install -q pip-tools==7.5.1
+          /tmp/lock/bin/python tools/lock.py --check
+      - name: Windows and macOS locks are current
+        if: matrix.python == '3.13.5'
+        run: |
+          /tmp/lock/bin/python -m pip install -q uv==0.13.0
+          /tmp/lock/bin/python tools/lock.py --cross --check
+      - name: manifest is current
+        run: .venv/bin/python tools/write_manifest.py --check
+      - name: tests (unit, parity, emulator)
+        run: |
+          .venv/bin/python -m pip install -q pytest==9.1.1
+          .venv/bin/python -m pytest -q

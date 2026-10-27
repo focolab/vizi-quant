@@ -1,0 +1,277 @@
+{
+  "vizi_regions_version": 2,
+  "volume": {
+    "shape_zyx": [
+      24,
+      96,
+      96
+    ],
+    "size_t": 4,
+    "size_c": 2,
+    "spacing_zyx": [
+      2.0,
+      0.5,
+      0.5
+    ],
+    "units": "um",
+    "calibration_provenance": "file",
+    "origin_convention": "voxel-corner",
+    "origin_zyx": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "region_set": [
+    {
+      "box_id": "b677f0bc734a4e8588ec7b3bf90aeafa",
+      "name": "Box 1",
+      "color": "#00FFFF",
+      "x_min": 32.0,
+      "x_max": 64.0,
+      "y_min": 32.0,
+      "y_max": 64.0,
+      "z_min": 8.0,
+      "z_max": 16.0,
+      "visible": true,
+      "crop_active": false,
+      "kind": "rectangle",
+      "source_kind": "",
+      "roi_data": null,
+      "frame_basis": null,
+      "coordinate_space": "voxel-index",
+      "frame_lock": 0,
+      "frame_metric_zyx": [
+        4.0,
+        1.0,
+        1.0
+      ],
+      "authoring_spacing_zyx_um": [
+        2.0,
+        0.5,
+        0.5
+      ],
+      "frame_metric_provenance": "file",
+      "parent_id": null,
+      "attrs": {},
+      "active_features": [
+        {
+          "kind": "measure",
+          "channels": [],
+          "stats": [
+            "mean",
+            "p85_95",
+            "p05_15",
+            "std"
+          ],
+          "geom": [
+            "n",
+            "center",
+            "size"
+          ],
+          "auto": false,
+          "rest": {
+            "extents": [
+              32.0,
+              64.0,
+              32.0,
+              64.0,
+              8.0,
+              16.0
+            ],
+            "frame_basis": null
+          }
+        }
+      ]
+    },
+    {
+      "box_id": "9a2bfae4b7fb4bd78322ce79af7bc7d6",
+      "name": "Box 2",
+      "color": "#FF00FF",
+      "x_min": 26.9,
+      "x_max": 53.699999999999996,
+      "y_min": 46.10000000000001,
+      "y_max": 65.3,
+      "z_min": 7.8999999999999995,
+      "z_max": 14.5,
+      "visible": true,
+      "crop_active": false,
+      "kind": "ellipse",
+      "source_kind": "",
+      "roi_data": null,
+      "frame_basis": null,
+      "coordinate_space": "voxel-index",
+      "frame_lock": 0,
+      "frame_metric_zyx": [
+        4.0,
+        1.0,
+        1.0
+      ],
+      "authoring_spacing_zyx_um": [
+        2.0,
+        0.5,
+        0.5
+      ],
+      "frame_metric_provenance": "file",
+      "parent_id": null,
+      "attrs": {},
+      "active_features": [
+        {
+          "kind": "measure",
+          "channels": [],
+          "stats": [
+            "mean",
+            "p85_95",
+            "p05_15",
+            "std"
+          ],
+          "geom": [
+            "n",
+            "center",
+            "size"
+          ],
+          "auto": false,
+          "rest": {
+            "extents": [
+              26.9,
+              53.699999999999996,
+              46.10000000000001,
+              65.3,
+              7.8999999999999995,
+              14.5
+            ],
+            "frame_basis": null
+          }
+        }
+      ]
+    },
+    {
+      "box_id": "a77d9590d6b948ce867c0458e6e3537f",
+      "name": "Box 3",
+      "color": "#FFFF00",
+      "x_min": 0.0,
+      "x_max": 95.0,
+      "y_min": 0.0,
+      "y_max": 95.0,
+      "z_min": 0.0,
+      "z_max": 23.0,
+      "visible": true,
+      "crop_active": false,
+      "kind": "rectangle",
+      "source_kind": "",
+      "roi_data": null,
+      "frame_basis": null,
+      "coordinate_space": "voxel-index",
+      "frame_lock": 0,
+      "frame_metric_zyx": [
+        4.0,
+        1.0,
+        1.0
+      ],
+      "authoring_spacing_zyx_um": [
+        2.0,
+        0.5,
+        0.5
+      ],
+      "frame_metric_provenance": "file",
+      "parent_id": null,
+      "attrs": {},
+      "active_features": [
+        {
+          "kind": "measure",
+          "channels": [],
+          "stats": [
+            "mean",
+            "p85_95",
+            "p05_15",
+            "std"
+          ],
+          "geom": [
+            "n",
+            "center",
+            "size"
+          ],
+          "auto": false,
+          "rest": {
+            "extents": [
+              0.0,
+              9.0,
+              0.0,
+              9.0,
+              0.0,
+              2.0
+            ],
+            "frame_basis": null
+          }
+        }
+      ]
+    },
+    {
+      "box_id": "f81bc8d8bee64a9b9835cfb3a7564761",
+      "name": "Box 4",
+      "color": "#00FF00",
+      "x_min": 10.3,
+      "x_max": 30.7,
+      "y_min": 64.0,
+      "y_max": 94.9,
+      "z_min": 2.5,
+      "z_max": 9.2,
+      "visible": true,
+      "crop_active": false,
+      "kind": "rectangle",
+      "source_kind": "",
+      "roi_data": null,
+      "frame_basis": null,
+      "coordinate_space": "voxel-index",
+      "frame_lock": 0,
+      "frame_metric_zyx": [
+        4.0,
+        1.0,
+        1.0
+      ],
+      "authoring_spacing_zyx_um": [
+        2.0,
+        0.5,
+        0.5
+      ],
+      "frame_metric_provenance": "file",
+      "parent_id": null,
+      "attrs": {},
+      "active_features": [
+        {
+          "kind": "measure",
+          "channels": [],
+          "stats": [
+            "mean",
+            "p85_95",
+            "p05_15",
+            "std"
+          ],
+          "geom": [
+            "n",
+            "center",
+            "size"
+          ],
+          "auto": false,
+          "rest": {
+            "extents": [
+              10.3,
+              30.7,
+              64.0,
+              94.9,
+              2.5,
+              9.2
+            ],
+            "frame_basis": null
+          }
+        }
+      ]
+    }
+  ],
+  "vizi_version": "0.9.2",
+  "saved_utc": "2026-10-03T00:27:09.843575+00:00",
+  "region_id": "6461bd79",
+  "source": {
+    "path": "fixture.ome.tif"
+  }
+}

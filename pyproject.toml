@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vizi-quant"
+version = "0.1.0"
+description = "Region quantification and plotting for vizi, as a plugin"
+requires-python = ">=3.11,!=3.12.*,<3.14"
+dependencies = [
+    # The SDK is pinned to a commit of its public repository and built into the
+    # vendored wheel (vendor/) that the locks hash.
+    "vizi-plugin-sdk @ git+https://github.com/focolab/vizi-plugin-sdk@9be01b8012a6cb9420ba85357433cdfe460f5c2b",
+    "numpy>=1.26",
+    "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["vizi_quant"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# the package imports from the checkout: a bootstrapped .venv does not install it
+pythonpath = ["."]

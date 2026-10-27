@@ -1,0 +1,8 @@
+vizi-quant
+Copyright 2026 the vizi-quant authors
+
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+tests/_vendor/vizi_hostsim/ is the host emulator from vizi-plugin-sdk,
+Copyright 2026 the vizi-plugin-sdk authors, licensed under the Apache License,
+Version 2.0; its author is Rex Kerr.

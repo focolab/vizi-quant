@@ -1,0 +1,2 @@
+# vizi-quant has no GPU code: the CPU profile is the whole plugin.
+-r base.in
